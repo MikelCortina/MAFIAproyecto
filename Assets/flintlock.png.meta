@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 5845a55e1a3621a4496f1f8a339ae6ad
+guid: 411e77e175132f645aade8b28483df3f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2047409178854115304
-    second: Pose_0
+      213: -3694603555575582573
+    second: flintlock_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -24,7 +24,7 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
     flipGreenChannel: 0
-  isReadable: 0
+  isReadable: 1
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
@@ -57,7 +57,7 @@ TextureImporter:
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 8
+  textureType: 7
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Pose_0
+      name: flintlock_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1647
-        width: 133
-        height: 184
+        x: 1
+        y: 10
+        width: 127
+        height: 108
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8e7497feccbd96c10800000000000000
-      internalID: 2047409178854115304
+      spriteID: 390b50c14a12abcc0800000000000000
+      internalID: -3694603555575582573
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Pose_0: 2047409178854115304
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
