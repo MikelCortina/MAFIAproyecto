@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 1b2716ed8cb74144689a7a5a4e07f8c8
+=======
+guid: 411e77e175132f645aade8b28483df3f
+>>>>>>> origin/main
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -24,7 +28,11 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
     flipGreenChannel: 0
+<<<<<<< HEAD
   isReadable: 0
+=======
+  isReadable: 1
+>>>>>>> origin/main
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
@@ -57,7 +65,11 @@ TextureImporter:
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
+<<<<<<< HEAD
   textureType: 8
+=======
+  textureType: 7
+>>>>>>> origin/main
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1

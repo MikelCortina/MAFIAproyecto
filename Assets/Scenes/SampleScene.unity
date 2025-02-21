@@ -119,6 +119,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+<<<<<<< HEAD
 --- !u!1 &818745
 GameObject:
   m_ObjectHideFlags: 0
@@ -9182,6 +9183,10 @@ RectTransform:
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &442889237
 GameObject:
+=======
+--- !u!1001 &7417918597173788165
+PrefabInstance:
+>>>>>>> origin/main
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -9205,6 +9210,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 442889237}
   serializedVersion: 2
+<<<<<<< HEAD
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -9326,10 +9332,13 @@ SpriteRenderer:
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
+=======
+>>>>>>> origin/main
   m_Modification:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+<<<<<<< HEAD
     - target: {fileID: 1983880410894877783, guid: e391c6010367b794188f5db8482b63d8, type: 3}
       propertyPath: vidaScript
       value: 
@@ -38415,21 +38424,62 @@ PrefabInstance:
     - target: {fileID: 2925653949693387851, guid: e15d8cd62233aa44c93c3b1ec1e286e5, type: 3}
       propertyPath: m_Name
       value: brown-36378_1280
+=======
+    - target: {fileID: 2125442609827102198, guid: 1aa130a35a0a4c34695ce856728b37cd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2125442609827102198, guid: 1aa130a35a0a4c34695ce856728b37cd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2125442609827102198, guid: 1aa130a35a0a4c34695ce856728b37cd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2125442609827102198, guid: 1aa130a35a0a4c34695ce856728b37cd, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2125442609827102198, guid: 1aa130a35a0a4c34695ce856728b37cd, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2125442609827102198, guid: 1aa130a35a0a4c34695ce856728b37cd, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2125442609827102198, guid: 1aa130a35a0a4c34695ce856728b37cd, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2125442609827102198, guid: 1aa130a35a0a4c34695ce856728b37cd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2125442609827102198, guid: 1aa130a35a0a4c34695ce856728b37cd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2125442609827102198, guid: 1aa130a35a0a4c34695ce856728b37cd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6400202703465144647, guid: 1aa130a35a0a4c34695ce856728b37cd, type: 3}
+      propertyPath: m_Name
+      value: EscneaMikel
+>>>>>>> origin/main
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: e15d8cd62233aa44c93c3b1ec1e286e5, type: 3}
---- !u!4 &8487969201382166420 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1787158132693560775, guid: e15d8cd62233aa44c93c3b1ec1e286e5, type: 3}
-  m_PrefabInstance: {fileID: 8487969201382166419}
-  m_PrefabAsset: {fileID: 0}
+  m_SourcePrefab: {fileID: 100100000, guid: 1aa130a35a0a4c34695ce856728b37cd, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+<<<<<<< HEAD
   - {fileID: 619394802}
   - {fileID: 984309715}
   - {fileID: 1498007886}
@@ -38573,3 +38623,6 @@ SceneRoots:
   - {fileID: 1847315913}
   - {fileID: 1190615298}
   - {fileID: 333749978}
+=======
+  - {fileID: 7417918597173788165}
+>>>>>>> origin/main
