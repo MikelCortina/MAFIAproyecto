@@ -13,7 +13,7 @@ public class CameraFollow1 : MonoBehaviour
            
             // Posición objetivo de la cámara (manteniendo la misma Z)
 
-            Vector3 targetPosition = new Vector3(playerr.position.x+2, playerr.position.y, transform.position.z);
+            Vector3 targetPosition = new Vector3(playerr.position.x+2, playerr.position.y+2, transform.position.z);
           
 
 

@@ -12,8 +12,8 @@ public class LineToMouse : MonoBehaviour
             lineRenderer = gameObject.AddComponent<LineRenderer>();
 
         // Configurar el LineRenderer para evitar que desaparezca
-        lineRenderer.startWidth = 0.05f;
-        lineRenderer.endWidth = 0.05f;
+        lineRenderer.startWidth = 0.025f;
+        lineRenderer.endWidth = 0.025f;
         lineRenderer.positionCount = 2;
         lineRenderer.material = new Material(Shader.Find("Sprites/Default")); // Material visible
         lineRenderer.sortingLayerName = "Foreground"; // Evitar que se oculte detrás de sprites

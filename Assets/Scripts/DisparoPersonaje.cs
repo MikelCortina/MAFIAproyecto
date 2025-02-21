@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -23,6 +24,8 @@ public class PlayerShooting : MonoBehaviour
 
     public Image barraRecarga; // La imagen de la barra
     public Transform barraRecargaPosicion; // Posición encima del jugador
+    public TextMeshProUGUI balasText; // Referencia al texto del HUD
+
 
     void Start()
     {
@@ -44,6 +47,7 @@ public class PlayerShooting : MonoBehaviour
             if (CanShoot() && cargadorRecamara > 0)
             {
                 cargadorRecamara -= 1;
+                ActualizarHUD();
                 Debug.Log("Has disparado, te quedan " + cargadorRecamara + " balas");
                 StartCoroutine(CasteoDisparo());
             }
@@ -52,6 +56,7 @@ public class PlayerShooting : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R) && !isReloading)
         {
             StartCoroutine(ReloadWeapon());
+            ActualizarHUD();
         }
 
         // Si el jugador está moviéndose, no puede disparar
@@ -70,6 +75,14 @@ public class PlayerShooting : MonoBehaviour
             barraRecarga.transform.position = barraRecargaPosicion.position;
         }
     }
+    void ActualizarHUD()
+    {
+        if (balasText != null)
+        {
+            balasText.text = $"Balas: {cargadorRecamara}/{capacidadCargador}";
+        }
+    }
+
     IEnumerator ReloadWeapon()
     {
         isReloading = true;

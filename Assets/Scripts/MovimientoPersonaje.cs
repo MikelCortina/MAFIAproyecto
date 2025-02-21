@@ -3,48 +3,52 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float speed;
-    public float defaultSpeed;  // Velocidad de movimiento
-    public float jumpForce;     // Fuerza de salto
-    private Rigidbody2D rb;     // Referencia al Rigidbody2D del personaje
+    public float defaultSpeed;
+    public float jumpForce;
+    private Rigidbody2D rb;
     public float vidaTotal = 1000f;
     public float vidaActual = 1000f;
     public PlayerShooting shooting;
 
-    public bool facingRight = true; // Indica si el personaje está mirando a la derecha
+    public bool facingRight = true;
+
+    [HideInInspector] public bool isClimbing = false; // Nueva variable pública para detectar escalada
 
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>(); // Obtenemos el Rigidbody2D del personaje
-        rb.freezeRotation = true;        // Congelamos la rotación para evitar que el jugador gire al colisionar
+        rb = GetComponent<Rigidbody2D>();
+        rb.freezeRotation = true;
     }
 
     void Update()
     {
-        // Movimiento horizontal
-        float moveInput = Input.GetAxis("Horizontal");
-
-        if (!shooting.isWaitingToShoot)
+        if (!isClimbing) // Solo permite movimiento si NO está escalando
         {
-            rb.linearVelocity = new Vector2(moveInput * speed, rb.linearVelocity.y);
-        }
+            float moveInput = Input.GetAxis("Horizontal");
 
-        // Reducir velocidad al recargar
-        speed = shooting.isReloading ? 1f : defaultSpeed;
+            if (!shooting.isWaitingToShoot)
+            {
+                rb.linearVelocity = new Vector2(moveInput * speed, rb.linearVelocity.y);
+            }
 
-        // Verifica la dirección y voltea si es necesario
-        if (moveInput > 0 && !facingRight)
-        {
-            Flip();
-        }
-        else if (moveInput < 0 && facingRight)
-        {
-            Flip();
-        }
+            // Reducir velocidad al recargar
+            speed = shooting.isReloading ? 1f : defaultSpeed;
 
-        // Verificamos si el jugador presiona la tecla de salto y está en el suelo
-        if (Input.GetButtonDown("Jump") && IsGrounded())
-        {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+            // Voltear si es necesario
+            if (moveInput > 0 && !facingRight)
+            {
+                Flip();
+            }
+            else if (moveInput < 0 && facingRight)
+            {
+                Flip();
+            }
+
+            // Salto solo si no está escalando
+            if (Input.GetButtonDown("Jump") && IsGrounded())
+            {
+                rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+            }
         }
     }
 
@@ -66,17 +70,14 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    // Método para verificar si está en el suelo
     private bool IsGrounded()
     {
         return Physics2D.Raycast(transform.position, Vector2.down, 0.1f).collider != null;
     }
 
-    // Método para voltear al jugador
     private void Flip()
     {
         facingRight = !facingRight;
-        transform.Rotate(0f, 180f, 0f); // Gira el personaje 180° en el eje Y
+        transform.Rotate(0f, 180f, 0f);
     }
 }
-

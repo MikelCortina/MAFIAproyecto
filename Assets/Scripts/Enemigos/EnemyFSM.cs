@@ -3,24 +3,24 @@ using UnityEngine.UI;
 
 public class EnemyFSM : MonoBehaviour
 {
-    //Campo de vision, detecciones 
     public float visionRange = 10f;
     public float visionAngle = 60f;
     public LayerMask playerLayer;
     public Transform player;
-    public float alertTime = 10f; // Tiempo de espera en alerta
-    public float attackTime = 6f; // Tiempo de espera en ataque
+    public float alertTime = 10f;
+    public float attackTime = 6f;
     private float coberturaTimer = 0f;
     public float coberturaTime = 3f;
 
-
-    public float circleRadius = 5f; // Radio del c�rculo
-    public Vector2 circleCenter;   // Centro del c�rculo
+    public float circleRadius = 5f;
+    public Vector2 circleCenter;
     public LayerMask bulletLayer;
-    public Image Alerta;
-    public Image Ataque;
+    public Image AlertaPrefab;
+    public Image AtaquePrefab;
+    private Image Alerta;
+    private Image Ataque;
     public Transform puntoAlertas;
-    //Estados
+
     public enum EnemyState { Idle, Alert, Attack }
     public EnemyState currentState = EnemyState.Idle;
     public bool atacando = false;
@@ -31,15 +31,10 @@ public class EnemyFSM : MonoBehaviour
     private float attackTimer = 0f;
     private float enemyHealth = 100f;
 
-
-    //Coberturas
-
     public float radioDeCobertura = 1f;
     public bool coberturaEstado = false;
     private Renderer objectRenderer;
 
-
-    //Disparo
     public float shootInterval = 4f;
     private bool coberturaPlayer;
     public GameObject bulletPrefab;
@@ -50,24 +45,24 @@ public class EnemyFSM : MonoBehaviour
 
     private void Start()
     {
+        Alerta = Instantiate(AlertaPrefab, puntoAlertas.position, Quaternion.identity, transform.parent);
+        Ataque = Instantiate(AtaquePrefab, puntoAlertas.position, Quaternion.identity, transform.parent);
+
         Alerta.gameObject.SetActive(false);
         Ataque.gameObject.SetActive(false);
     }
+
     void Update()
     {
-        if (this == null) // O si prefieres verificar el transform: if (transform == null)
+        if (this == null)
         {
-            Destroy(Alerta);
-            Destroy(Ataque);
-            Alerta.gameObject.SetActive(false);
-            Ataque.gameObject.SetActive(false);
+            Destroy(Alerta.gameObject);
+            Destroy(Ataque.gameObject);
         }
 
         Alerta.transform.position = puntoAlertas.position;
         Ataque.transform.position = puntoAlertas.position;
 
-
-        // Detecci�n y l�gica de estado
         DetectPlayer();
         DetectEnemy();
 
@@ -85,7 +80,9 @@ public class EnemyFSM : MonoBehaviour
         }
     }
 
-    void DetectEnemy()
+
+
+void DetectEnemy()
     {
         circleCenter = transform.position;
 
@@ -149,6 +146,7 @@ public class EnemyFSM : MonoBehaviour
        
         
             Alerta.gameObject.SetActive(true); // Activa el sprite de alerta
+        Debug.Log("Alerta");
         
         Ataque.gameObject.SetActive(false);
 
